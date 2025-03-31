@@ -3,3 +3,5 @@ const productsController = {
         return res.render(title);
     },
 }
+
+module.exports = productsController;
