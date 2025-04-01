@@ -1,6 +1,8 @@
 const profileController = {
     index: function(req, res){
-        res.render('profile');
+        return res.render('profile', {
+                user: req.session.user
+        });
     }
 }
 
