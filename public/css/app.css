@@ -529,3 +529,16 @@ textarea.form-input {
     margin: auto;
   }
 }
+
+/* FORM REGISTRO */
+.formLogin, .formRegister, .formAddProduct{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    margin: 0;
+}
