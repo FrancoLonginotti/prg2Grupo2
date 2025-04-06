@@ -1,15 +1,18 @@
+const data = require('../db/data');
 const productsController = {
     index: function(req, res){
-        res.render('product', {
-            name: 'Auriculares Bluetooth',
-            description: 'Auriculares inalámbricos con cancelación de ruido y micrófono incorporado.',
-            image: '/images/products/auriculares.jpg',
-            comments: [
-                { username: 'Lucas', text: '¡Excelente calidad de sonido!' },
-                { username: 'Ana', text: 'Cómodos y la batería dura mucho.' },
-                { username: 'Carlos', text: 'Recomiendo comprar el estuche protector también.' }
-            ]
-        });
+        let productos = data.productos;
+        let index = req.params.index;
+        
+        if (productos[index]){
+            let product = productos[index];
+            res.render('product', {
+                name: product.name,
+                description: product.description,
+                image: product.image,
+                comments: product.comments
+            });
+        }
     }
 }
 

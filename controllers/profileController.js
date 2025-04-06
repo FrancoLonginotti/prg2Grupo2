@@ -1,7 +1,11 @@
+const data = require('../db/data');
 const profileController = {
     index: function(req, res){
-        return res.render('profile', {
-                user: req.session.user
+        let productos = data.productos;
+
+        res.render('profile', {
+            productos: productos,
+            user: data.usuario
         });
     }
 }

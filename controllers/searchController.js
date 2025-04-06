@@ -1,6 +1,7 @@
 const searchController = {
     index: function(req, res){
-        res.render('search-results');
+        let result = req.query.search;
+        res.render('search-results', {result});
     }
 }
 

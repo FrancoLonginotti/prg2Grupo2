@@ -541,4 +541,17 @@ textarea.form-input {
     width: 90%;
     max-width: 400px;
     margin: 0;
+    padding: 10px;
+}
+
+.register input{
+  margin: 15px 0;
+}
+
+.login input{
+  margin: 15px 0;
+}
+
+.addProduct input{
+  margin: 15px 0;
 }

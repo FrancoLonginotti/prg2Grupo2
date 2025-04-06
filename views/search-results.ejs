@@ -25,13 +25,51 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Resultados de búsqueda</h2>
+				<h2 class="products-title">Resultados de búsqueda para <%= result %></h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá van los resultados de búsqueda. <br>
-			Eliminen estás líneas y cosntruyan la página de resultados de búsqueda. <br>
-			////////////////
-			</h2>
+			<!--<h2 class="col-12">  -->
+				<% let found = false; %>
+				<% if (result == 'cafetera' || result == 'cafetera moulinex') { %>
+					<% found = true; %>
+					<article class="col-12 col-lg-8 product-detail-info">
+						<h2>Cafetera Moulinex</h2>
+						<img src="/images/products/img-cafetera-moulinex.jpg" alt="Cafetera" class="product-detail-img">
+					  	<p class="product-detail-description">Cafetera eléctrica de alta potencia</p>
+					</article>
+				<% } if (result == 'auriculares') { %>
+					<% found = true; %>
+					<article class="col-12 col-lg-8 product-detail-info">
+						<h2>Auriculares</h2>
+						<img src="/images/products/auriculares.jpg" alt="auriculares" class="product-detail-img">
+					  	<p class="product-detail-description">Auriculares apple soundproof</p>
+					</article>
+				<% } if (result == 'macbook' || result == 'computadora' || result == 'computadora macbook' || result == 'Macbook Pro'){ %>
+					<% found = true; %>
+					<article class="col-12 col-lg-8 product-detail-info">
+						<h2>Computadora Macbook Pro 2019</h2>
+						<img src="/images/products/img-macbook-pro-2019.jpg" alt="macbook" class="product-detail-img">
+					  	<p class="product-detail-description">Computadora Macbook Pro 2019</p>
+					</article>
+				<% } if (result == 'samsung' || result == 'samsung galaxy' || result == 'samsung galaxy s10') { %>
+					<% found = true; %>
+					<article class="col-12 col-lg-8 product-detail-info">
+						<h2>Samsung Galaxy s10</h2>
+						<img src="/images/products/img-samsung-galaxy-s10.jpg" alt="samsungGalaxy" class="product-detail-img">
+					  	<p class="product-detail-description">Samsung Galaxy s10</p>
+					</article>
+				<% } if (result == 'samsung' || result == 'samsung smart' || result == 'smart tv') { %>
+					<% found = true; %>
+					<article class="col-12 col-lg-8 product-detail-info">
+						<h2>Samsung Smart TV</h2>
+						<img src="/images/products/img-tv-samsung-smart.jpg" alt="samsungTv" class="product-detail-img">
+					  	<p class="product-detail-description">Samsung Smart TV</p>
+					</article>
+					<% } %>
+				<% if (!found) { %>
+      				<p class="product-detail-description">No se encontraron resultados.</p>
+    			<% } %>
+			</div>
 
 
 	<!-- footer -->
