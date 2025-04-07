@@ -28,25 +28,20 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<!--<h2 class="col-12">  -->
-			<% let productoEncontrado = []; %>
-			<% for(let i = 0; i < productos.length; i++) { %>
-				<% if (result == productos[i].alias) { %>
-					<% productoEncontrado.push(productos[i]); %>
-				<% } %> 
-			<% } %>
-			
-			<% if (productoEncontrado.length > 0) { %>
-				<% for (let i = 0; i < productoEncontrado.length; i++) { %>
+		   
+			<% if (productos.length > 0) { %>
+				<% for (let i = 0; i < productos.length; i++) { %>
 				<article class="col-12 col-lg-8 product-detail-info">
-					<h2><%= productoEncontrado[i].name %></h2>
-					<img src="<%= productoEncontrado[i].image %>" alt="<%= productoEncontrado[i].name %>" class="product-detail-img">
-					<p class="product-detail-description"><%= productoEncontrado[i].description %></p>
-					<% } %>
+					<h2><%= productos[i].name %></h2>
+					<img src="<%= productos[i].image %>" alt="<%= productos[i].name %>" class="product-detail-img">
+					  <p class="product-detail-description"><%= productos[i].description %></p>
+					  <% } %>
 				</article>
 			<% } else { %>
 				<p class="product-detail-description">No se encontraron resultados.</p>
-			<% } %>
-			</div>
+			<% } %> 
+		</div>
+	</div>
 	<!-- footer -->
 	<%- include("./partials/footer") %>
 	<!-- /footer -->
