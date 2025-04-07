@@ -8,13 +8,14 @@ var data = {
         },
     productos: [
         {
-            name: "Cafetera Moulinex",
-            description: "Cafetera eléctrica de alta potencia",
-            image: "/images/products/img-cafetera-moulinex.jpg",
+            name: "Carpa ETNA2",
+            description: "Carpa profesional",
+            image: "/images/products/img-carpa2.jpg",
+            alias: "carpa",
             comments: [
                 {
                     username: "Ana",
-                    text: "Me encanta esta cafetera!",
+                    text: "Me encanta esta carpa!",
                     fotoPerfil: "/images/users/default-image.png",
                 },
                 {
@@ -25,13 +26,14 @@ var data = {
             ]
         },
         {
-            name: "Auriculares Apple",
-            description: "Auriculares Apple con cancelación de ruido",
-            image: "/images/products/auriculares.jpg",
+            name: "Silla plegable",
+            description: "Silla plegable con apoya brazos",
+            image: "/images/products/img-silla.jpg",
+            alias: "silla",
             comments: [
                 {
                     username: "Ana",
-                    text: "Me encantan estos auriculares!",
+                    text: "Me encantan esta silla!",
                     fotoPerfil: "/images/users/default-image.png",
                 },
                 {
@@ -42,13 +44,14 @@ var data = {
             ]
         },
         {
-            name: "Macbook Pro 2019",
-            description: "Computadora potente para trabajo y estudio",
-            image: "/images/products/img-macbook-pro-2019.jpg",
+            name: "JBL Charge 5",
+            description: "Parlante resistente al agua y al polvo",
+            image: "/images/products/img-parlante.jpg",
+            alias: "parlante",
             comments: [
                 {
                     username: "Ana",
-                    text: "Me encanta esta compu!",
+                    text: "Me encanta ese parlante!",
                     fotoPerfil: "/images/users/default-image.png",
                 },
                 {
@@ -59,13 +62,14 @@ var data = {
             ]
         },
         {
-            name: "Samsung Galaxy S10",
-            description: "Smartphone de alta gama con excelente cámara",
-            image: "/images/products/img-samsung-galaxy-s10.jpg",
+            name: "Navaja Victorinox",
+            description: "Navaja multiuso de bolsillo",
+            image: "/images/products/img-navaja.jpg",
+            alias: "navaja",
             comments: [
                 {
                     username: "Ana",
-                    text: "Me encanta este telefono!",
+                    text: "Me encanta esta navaja!",
                     fotoPerfil: "/images/users/default-image.png",
                 },
                 {
@@ -76,9 +80,10 @@ var data = {
             ]
         },
         {
-            name: "Samsung Smart TV",
-            description: "Smart TV 4K con conexión WiFi",
-            image: "/images/products/img-tv-samsung-smart.jpg",
+            name: "Powerbank Leles PG",
+            description: "Cargador solar de 49800 mAh - Cargador portátil de carga rápida",
+            image: "/images/products/img-powerBank.jpg",
+            alias: "bateria",
             comments: [
                 {
                     username: "Ana",
@@ -93,13 +98,14 @@ var data = {
             ]
         },
         {
-            name: "Auriculares Apple",
-            description: "Auriculares Apple con cancelación de ruido",
-            image: "/images/products/auriculares.jpg",
+            name: "Termo Stanley",
+            description: "Termo Stanley de 1.4 lts, mantiene tus bebidas frías o calientes por horas.",
+            image: "/images/products/img-termoStanley.jpg",
+            alias: "termo",
             comments: [
                 {
                     username: "Ana",
-                    text: "Me encanta esta cafetera!",
+                    text: "Me encanta este termo!",
                     fotoPerfil: "/images/users/default-image.png",
                 },
                 {
@@ -110,13 +116,14 @@ var data = {
             ]
         },
         {
-            name: "Auriculares Apple",
-            description: "Auriculares Apple con cancelación de ruido",
-            image: "/images/products/auriculares.jpg",
+            name: "Carpa Naturehike",
+            description: "Carpa para 3 personas",
+            image: "/images/products/img-carpa.jpg",
+            alias: "carpa",
             comments: [
                 {
                     username: "Ana",
-                    text: "Me encanta esta cafetera!",
+                    text: "Me encanta esta carpa!",
                     fotoPerfil: "/images/users/default-image.png",
                 },
                 {
@@ -127,13 +134,14 @@ var data = {
             ]
         },
         {
-            name: "Auriculares Apple",
-            description: "Auriculares Apple con cancelación de ruido",
-            image: "/images/products/auriculares.jpg",
+            name: "Linterna Led",
+            description: "Linterna led de mano de 640 lumen",
+            image: "/images/products/img-linterna.jpg",
+            alias: "linterna",
             comments: [
                 {
                     username: "Ana",
-                    text: "Me encanta esta cafetera!",
+                    text: "Me encanta esta linterna!",
                     fotoPerfil: "/images/users/default-image.png",
                 },
                 {
@@ -144,13 +152,14 @@ var data = {
             ]
         },
         {
-            name: "Auriculares Apple",
-            description: "Auriculares Apple con cancelación de ruido",
-            image: "/images/products/auriculares.jpg",
+            name: "Mochila Trekking PRO",
+            description: "Mochila de camping de 70L con bolsillos y tiras ajustables",
+            image: "/images/products/img-mochila.jpg",
+            alias: "mochila",
             comments: [
                 {
                     username: "Ana",
-                    text: "Me encanta esta cafetera!",
+                    text: "Me encanta esta mochila!",
                     fotoPerfil: "/images/users/default-image.png",
                 },
                 {
@@ -161,13 +170,14 @@ var data = {
             ]
         },
         {
-            name: "Auriculares Apple",
-            description: "Auriculares Apple con cancelación de ruido",
-            image: "/images/products/auriculares.jpg",
+            name: "Bolsa de dormir SouthPort",
+            description: "Bolsa de dormir con cierre",
+            image: "/images/products/img-bolsaDormir.jpg",
+            alias: "bolsa",
             comments: [
                 {
                     username: "Ana",
-                    text: "Me encanta esta cafetera!",
+                    text: "Me encanta esta bolsa de dormir!",
                     fotoPerfil: "/images/users/default-image.png",
                 },
                 {

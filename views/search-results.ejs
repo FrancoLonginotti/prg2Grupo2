@@ -29,46 +29,24 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<!--<h2 class="col-12">  -->
-				<% let found = false; %>
-				<% if (result == 'cafetera' || result == 'cafetera moulinex') { %>
-					<% found = true; %>
-					<article class="col-12 col-lg-8 product-detail-info">
-						<h2>Cafetera Moulinex</h2>
-						<img src="/images/products/img-cafetera-moulinex.jpg" alt="Cafetera" class="product-detail-img">
-					  	<p class="product-detail-description">Cafetera eléctrica de alta potencia</p>
-					</article>
-				<% } if (result == 'auriculares') { %>
-					<% found = true; %>
-					<article class="col-12 col-lg-8 product-detail-info">
-						<h2>Auriculares</h2>
-						<img src="/images/products/auriculares.jpg" alt="auriculares" class="product-detail-img">
-					  	<p class="product-detail-description">Auriculares apple soundproof</p>
-					</article>
-				<% } if (result == 'macbook' || result == 'computadora' || result == 'computadora macbook' || result == 'Macbook Pro'){ %>
-					<% found = true; %>
-					<article class="col-12 col-lg-8 product-detail-info">
-						<h2>Computadora Macbook Pro 2019</h2>
-						<img src="/images/products/img-macbook-pro-2019.jpg" alt="macbook" class="product-detail-img">
-					  	<p class="product-detail-description">Computadora Macbook Pro 2019</p>
-					</article>
-				<% } if (result == 'samsung' || result == 'samsung galaxy' || result == 'samsung galaxy s10') { %>
-					<% found = true; %>
-					<article class="col-12 col-lg-8 product-detail-info">
-						<h2>Samsung Galaxy s10</h2>
-						<img src="/images/products/img-samsung-galaxy-s10.jpg" alt="samsungGalaxy" class="product-detail-img">
-					  	<p class="product-detail-description">Samsung Galaxy s10</p>
-					</article>
-				<% } if (result == 'samsung' || result == 'samsung smart' || result == 'smart tv') { %>
-					<% found = true; %>
-					<article class="col-12 col-lg-8 product-detail-info">
-						<h2>Samsung Smart TV</h2>
-						<img src="/images/products/img-tv-samsung-smart.jpg" alt="samsungTv" class="product-detail-img">
-					  	<p class="product-detail-description">Samsung Smart TV</p>
-					</article>
-					<% } %>
-				<% if (!found) { %>
-      				<p class="product-detail-description">No se encontraron resultados.</p>
-    			<% } %>
+			<% let productoEncontrado = []; %>
+			<% for(let i = 0; i < productos.length; i++) { %>
+				<% if (result == productos[i].alias) { %>
+					<% productoEncontrado.push(productos[i]); %>
+				<% } %> 
+			<% } %>
+			
+			<% if (productoEncontrado.length > 0) { %>
+				<% for (let i = 0; i < productoEncontrado.length; i++) { %>
+				<article class="col-12 col-lg-8 product-detail-info">
+					<h2><%= productoEncontrado[i].name %></h2>
+					<img src="<%= productoEncontrado[i].image %>" alt="<%= productoEncontrado[i].name %>" class="product-detail-img">
+					  <p class="product-detail-description"><%= productoEncontrado[i].description %></p>
+					  <% } %>
+				</article>
+			<% } else { %>
+				<p class="product-detail-description">No se encontraron resultados.</p>
+			<% } %>
 			</div>
 
 

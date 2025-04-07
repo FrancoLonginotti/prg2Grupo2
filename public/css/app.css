@@ -416,6 +416,11 @@ hr {
   width: 85%;
   
 }
+
+div .data{
+  margin-top: 3%;
+}
+
 .comments p{
   font-size: 1.5em;
   margin-top: 0;
@@ -554,4 +559,13 @@ textarea.form-input {
 
 .addProduct input{
   margin: 15px 0;
+}
+
+/* TIPOGRAFIA */
+h1{
+  font-family: 'Anton', sans-serif;
+}
+
+h2{
+  font-family: 'Playfair Display';
 }

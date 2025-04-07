@@ -25,7 +25,7 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= name %></h2> 
 			<p class="product-detail-description">
-				<a href="productAdd">Editar</a>
+				<a href="/productAdd">Editar</a>
 			</p>
 		</div>
 		<div class="product-detail">
@@ -43,7 +43,7 @@
 					<section class="comments">
 						<% for (let i = 0; i < comments.length; i++) { %>
 						<article>
-							<img src="https://via.placeholder.com/35" alt="">
+							<img src="/images/users/default-image.png" alt="">
 							<div class="data">
 							<p class="user">
 								<strong><a href="/profile"><%= comments[i].username %>:</a></strong>
