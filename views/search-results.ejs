@@ -20,7 +20,6 @@
 	<!-- Header -->
 	<%- include('./partials/header') %>
 	<!-- /Header -->
-
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
@@ -41,18 +40,15 @@
 				<article class="col-12 col-lg-8 product-detail-info">
 					<h2><%= productoEncontrado[i].name %></h2>
 					<img src="<%= productoEncontrado[i].image %>" alt="<%= productoEncontrado[i].name %>" class="product-detail-img">
-					  <p class="product-detail-description"><%= productoEncontrado[i].description %></p>
-					  <% } %>
+					<p class="product-detail-description"><%= productoEncontrado[i].description %></p>
+					<% } %>
 				</article>
 			<% } else { %>
 				<p class="product-detail-description">No se encontraron resultados.</p>
 			<% } %>
 			</div>
-
-
 	<!-- footer -->
 	<%- include("./partials/footer") %>
 	<!-- /footer -->
 </body>
-
 </html>
