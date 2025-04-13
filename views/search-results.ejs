@@ -7,14 +7,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link width="" rel="shortcut icon" href="/images/logo-mercado-liebre.jpg" />
 
-	<title> Mercado Liebre Argentina</title>
+	<title>Todo Terreno</title>
 	<!-- Font Awesome Stylesheet -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 	<!-- Bootstrap Grid Stylesheet -->
 	<link rel="stylesheet" href="/css/bootstrap-grid.min.css">
 	<!-- Own Stylesheet -->
 	<link rel="stylesheet" href="/css/app.css">
-	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Xanh+Mono:ital@0;1&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap" rel="stylesheet">
 
 </head>
 
@@ -32,13 +35,15 @@
 			<!--<h2 class="col-12">  -->
 			<% if (productos.length > 0) { %>
 				<% for (let i = 0; i < productos.length; i++) { %>
-				<article class="col-12 col-lg-8 product-detail-info">
-					<h2><%= productos[i].name %></h2>
-					<img src="<%= productos[i].image %>" alt="<%= productos[i].name %>" class="product-detail-img">
-					<p class="product-detail-description"><%= productos[i].description %></p>
-					<% } %>
-				</article>
-			<% } else { %>
+					<article class="col-12 col-lg-8 product-detail-info">
+						<h2><%= productos[i].name %></h2>
+						<img src="<%= productos[i].image %>" alt="<%= productos[i].name %>" class="product-detail-img">
+						<p class="product-detail-description"><%= productos[i].description %> <br> 
+						<a href="/products/<%= productos[i].index %>">Accede al detalle del producto <%= productos[i].name %>.</a>
+						</p>
+					</article>
+				<% } %>
+				<% } else { %>
 				<p class="product-detail-description">No se encontraron resultados.</p>
 			<% } %> 
 		</div>

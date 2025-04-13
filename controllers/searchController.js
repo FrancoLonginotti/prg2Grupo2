@@ -12,6 +12,7 @@ const searchController = {
            let producto = productos[i];
            for (let j = 0; j < producto.alias.length; j++) {
                if(producto.alias[j] === result){
+                   producto.index = i;
                    productosEncontrados.push(producto);
                    break;
                }

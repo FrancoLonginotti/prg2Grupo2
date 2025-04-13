@@ -1,7 +1,7 @@
 var data = {
     usuario: {
-            email: "josefina@gmail.com",
-            usuario: "josefina",
+            email: "Ana@gmail.com",
+            usuario: "Ana",
             password: 111,
             fechaNacimiento: "01/06/05",
             fotoPerfil: "/images/users/default-image.png",
