@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="/images/logo-mercado-liebre.jpg" />
+	<link width="" rel="shortcut icon" href="/images/bannerNos1.jpg" />
 
 	<title>Todo Terreno</title>
 	<!-- Font Awesome Stylesheet -->
@@ -39,7 +39,7 @@
 						<h2><%= productos[i].name %></h2>
 						<img src="<%= productos[i].image %>" alt="<%= productos[i].name %>" class="product-detail-img">
 						<p class="product-detail-description"><%= productos[i].description %> <br> 
-						<a href="/products/<%= productos[i].index %>">Accede al detalle del producto <%= productos[i].name %>.</a>
+						<a href="/products/detalle/<%= productos[i].index %>">Accede al detalle del producto <%= productos[i].name %>.</a>
 						</p>
 					</article>
 				<% } %>

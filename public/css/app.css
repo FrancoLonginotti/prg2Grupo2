@@ -535,11 +535,13 @@ textarea.form-input {
   width: 100%;
   margin: 0;
   padding: 10px;
-}
-
-.register{
   background-color: white;
   border: 2px solid black;
+} 
+
+
+.formLogin label{
+  margin: 0 10px;
 }
 
 .register a{
@@ -547,26 +549,26 @@ textarea.form-input {
 }
 
 .register input{
-margin: 15px 0;
+  margin: 15px 0;
 }
 
 .login input{
-margin: 15px 0;
+  margin: 15px 0;
 }
 
 .addProduct input{
-margin: 15px 0;
+  margin: 15px 0;
 }
 
 /* TIPOGRAFIA */
 
 .titulo-en-header {
-font-family: "Bebas Neue", sans-serif;
-font-weight: 400;
-font-style: normal;
-font-size: 36px;
-text-align: center;
-color: #5A3E2B;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 36px;
+  text-align: center;
+  color: #5A3E2B;
 }
 
 .main-navbar a{

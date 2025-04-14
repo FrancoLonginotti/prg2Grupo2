@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="/images/logo-mercado-liebre.jpg" />
+	<link width="" rel="shortcut icon" href="/images/bannerNos1.jpg" />
 
 	<title>Todo Terreno</title>
 	<!-- Font Awesome Stylesheet -->
@@ -30,7 +30,7 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= name %></h2> 
 			<p class="product-detail-description">
-				<a href="/productAdd">Editar</a>
+				<a href="/products/productAdd">Editar</a>
 			</p>
 		</div>
 		<div class="product-detail">
@@ -53,7 +53,7 @@
 							<img src="/images/users/default-image.png" alt="">
 							<div class="data">
 							<p class="user">
-								<strong><a href="/profile"><%= comments[i].username %>:</a></strong>
+								<strong><a href="/users/profile"><%= comments[i].username %>:</a></strong>
 								<%= comments[i].text %>
 							</p>
 							</div>
