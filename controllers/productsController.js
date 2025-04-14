@@ -6,15 +6,24 @@ const productsController = {
         
         if (productos[id]){
             let product = productos[id];
-            res.render('product', {
+            return res.render('product', {
                 name: product.name,
                 description: product.description,
                 image: product.image,
                 comments: product.comments
             });
         }
+    },
+    productAdd: function(req, res){
+        let productos = data.productos;
+        let user = data.usuario;
+    
+        return res.render('product-add', {
+            productos: productos,
+            user: user
+        });
     }
-}
+};
 
 
 module.exports = productsController;
