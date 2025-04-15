@@ -39,8 +39,6 @@ ol {
   padding: 0;
 }
 
-/*SAQUE EL A DE ACA*/
-
 figure {
   margin: 0;
   padding: 0;
@@ -51,7 +49,7 @@ img {
 }
 
 input,
-textarea {
+textarea{
   font-family: inherit;
 }
 
@@ -68,17 +66,6 @@ h2, h3 {
 body, p, span, label {
   font-family: "Roboto"
 }
-
-/* ej3 punto 2 */
-/* a {
-  font-weight: bold;
-  text-decoration: underline;
-  color: #007BFF;
-} */
-
-
-
-
 
 /*====== Main Header ======*/
 .main-header {
@@ -163,26 +150,25 @@ body, p, span, label {
 }
 
 .left-navbar a,
-.right-navbar a {
+.right-navbar a{
   display: block;
   padding: 5px 0;
   border-bottom: solid 1px var(--gray);
 }
 
-a {
+a{
   display: inline-block;
-  color: #607D8B;
+  color: black;
   font-family: "Xanh Mono", monospace;
   font-weight: 400;
   font-style: normal;
   text-decoration: none;
   font-size: 1em;
+  text-decoration: underline;
   }
 
 /*====== Banner ======*/
 .banner {
-  /* ESTO ESTA DOBLE */
-  /* background-image: url(/images/bannerNos.jpg);  */
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
@@ -333,8 +319,10 @@ a {
   padding: 15px 0;
 }
 
-.products-title
-
+.creditos{
+  text-align: center;
+  padding-top: 3%;
+}
 
 /*====== Product Detail ======*/
 .product-detail {
@@ -532,16 +520,24 @@ textarea.form-input {
   align-items: center;
   border-radius: 10px;
   padding: 20px;
-  width: 100%;
+  width: 30%;
   margin: 0;
   padding: 10px;
   background-color: white;
   border: 2px solid black;
+  font-family: "Xanh Mono", monospace;
 } 
 
+.register, .login, .addProduct{
+  display: flex;
+  justify-content: center;
+}
 
-.formLogin label{
+.formLogin label, .formRegister label, .formAddProduct label{
   margin: 0 10px;
+  font-family: "Xanh Mono", monospace;
+  font-size: large;
+  font-weight: bolder;
 }
 
 .register a{
