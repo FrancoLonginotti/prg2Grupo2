@@ -1,4 +1,7 @@
-const data = require('../db/data');
+const data = require('../database/models');
+const db = require('../database/models');
+const op = db.Sequelize.Op;
+
 const controller = {
     index: function(req, res) {
         res.render('index', {
@@ -25,6 +28,20 @@ const controller = {
             result: result,
             productos: productosEncontrados
         });
+    },
+    search2: function(req, res){
+        let search = req.query.search;
+        db.Producto.findAll({
+            where: [
+                {nombre: {[op.like]: "%" + search + "%"}}
+            ]
+        })
+        .then(function(productos){
+            res.render("search-results", {
+                productos: productos,
+                result: search,
+            });
+    })
     }
 };
 

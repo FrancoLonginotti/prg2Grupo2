@@ -36,10 +36,11 @@
 			<% if (productos.length > 0) { %>
 				<% for (let i = 0; i < productos.length; i++) { %>
 					<article class="col-12 col-lg-8 product-detail-info productSearch">
-						<h2><%= productos[i].name %></h2>
-						<img src="<%= productos[i].image %>" alt="<%= productos[i].name %>" class="product-detail-img">
-						<p class="product-detail-description"><%= productos[i].description %> <br> 
-						<a href="/products/detalle/<%= productos[i].index %>">Accede al detalle del producto <%= productos[i].name %>.</a>
+						<p>%= producto[i].usuario.nombre %></p> Esto de aca no funciona.
+						<h2><%= productos[i].nombre %></h2> 
+						<img src="<%= productos[i].foto %>" alt="<%= productos[i].nombre %>" class="product-detail-img">
+						<p class="product-detail-description"><%= productos[i].descripcion %> <br> 
+						<a href="/products/detalle/<%= productos[i].id %>">Accede al detalle del producto <%= productos[i].nombre %>.</a>
 						</p>
 					</article>
 				<% } %>

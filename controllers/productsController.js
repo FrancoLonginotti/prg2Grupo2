@@ -1,4 +1,6 @@
-const data = require('../db/data');
+const data = require('../database/models');
+const db = require('../database/data'); 
+
 const productsController = {
     index: function(req, res){
         let productos = data.productos;

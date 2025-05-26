@@ -1,6 +1,6 @@
-const data = require('../db/data');
+const data = require('../database/models');
 const bcrypt = require('bcryptjs');
-const db = require('../db/models'); 
+const db = require('../database/models'); 
 
 const usersController = {
     login: function(req, res){

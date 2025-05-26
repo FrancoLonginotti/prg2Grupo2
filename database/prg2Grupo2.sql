@@ -39,20 +39,20 @@ CREATE TABLE comentarios (
     deletedAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP
 );
 
-INSERT INTO usuarios (email, contrasenia, fecha, dni, fotoPerfil)
-VALUES('josefina@gmail.com', '1234jOSE', 20050106, 46443234, '/images/user/default-image.png');
+INSERT INTO usuarios (email, nombre, contrasenia, fecha, dni, fotoPerfil)
+VALUES('josefina@gmail.com', 'josefina', '1234jOSE', 20050106, 46443234, '/images/user/default-image.png');
 
-INSERT INTO usuarios (email, contrasenia, fecha, dni, fotoPerfil)
-VALUES('franco@gmail.com', '1234franco', 20040819, 45443234, '/images/user/default-image.png');
+INSERT INTO usuarios (email, nombre, contrasenia, fecha, dni, fotoPerfil)
+VALUES('franco@gmail.com', 'franco', '1234franco', 20040819, 45443234, '/images/user/default-image.png');
 
-INSERT INTO usuarios (email, contrasenia, fecha, dni, fotoPerfil)
-VALUES('marcos@gmail.com', '1234marcos', 20050715, 46443235, '/images/user/default-image.png');
+INSERT INTO usuarios (email, nombre, contrasenia, fecha, dni, fotoPerfil)
+VALUES('marcos@gmail.com', 'marcos', '1234marcos', 20050715, 46443235, '/images/user/default-image.png');
 
-INSERT INTO usuarios (email, contrasenia, fecha, dni, fotoPerfil)
-VALUES('maria@gmail.com', 'mariaa++', 19900710, 22443235, '/images/user/default-image.png');
+INSERT INTO usuarios (email, nombre, contrasenia, fecha, dni, fotoPerfil)
+VALUES('maria@gmail.com', 'maria', 'mariaa++', 19900710, 22443235, '/images/user/default-image.png');
 
-INSERT INTO usuarios (email, contrasenia, fecha, dni, fotoPerfil)
-VALUES('ignacio@gmail.com', 'nacho++', 20001201, 38443235, '/images/user/default-image.png');
+INSERT INTO usuarios (email, nombre, contrasenia, fecha, dni, fotoPerfil)
+VALUES('ignacio@gmail.com', 'nacho', 'nacho++', 20001201, 38443235, '/images/user/default-image.png');
 
 
 INSERT INTO productos (foto, nombre, descripcion, id_usuario)
