@@ -1,34 +1,47 @@
-const data = require('../database/models');
-const db = require('../database/data'); 
+const db = require('../database/models'); 
 
 const productsController = {
     index: function(req, res){
-        let id = req.params.id;
-        db.Producto.findByPk(id)
-        .then(function(producto){
-            res.render("product", {producto: producto})
+        let id = req.params.detalle;
+        db.Producto.findByPk(id, {
+            include: [
+                {
+                    association: "comentarios", 
+                    include: [
+                        {
+                            association: "usuario" 
+                        }
+                    ]
+                },
+                {
+                    association: "usuario"
+                }
+            ]
         })
-        
-        // let id = req.params.detalle;
-        
-        // if (productos[id]){
-        //     let product = productos[id];
-        //     return res.render('product', {
-        //         name: product.name,
-        //         description: product.description,
-        //         image: product.image,
-        //         comments: product.comments
-        //     });
-        // }
+        .then(function(producto){
+            return res.render("product", {producto: producto});
+        })
+
+        .catch(function(error){
+            console.log(error)
+        })
+
+       
     },
     productAdd: function(req, res){
-        let productos = data.productos;
-        let user = data.usuario;
-    
-        return res.render('product-add', {
-            productos: productos,
-            user: user
-        });
+        return res.render('product-add')
+    },
+
+    nuevoProd: function(req, res){
+        db.Producto.create({
+            foto: req.body.imagen,
+            nombre: req.body.nombreProducto, 
+            descripcion: req.body.descripcionProducto,
+            id_usuario: req.session.userLogueado.id
+        })
+        .then(function(producto){
+            return res.redirect('/users/profile'); 
+        })
     }
 };
 

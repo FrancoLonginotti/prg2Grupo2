@@ -21,7 +21,12 @@
 </head>
 <body>
 	<!-- Header -->
-	<%- include('./partials/header') %>
+	<% if(locals.user != undefined){ %>
+		<%- include('./partials/headerLogueado') %>
+	<% } %>
+	<% if(locals.user == undefined){ %>
+		<%- include('./partials/header') %>
+	<% } %>
 	<!-- /Header -->
 	
 	<!-- Banner -->
@@ -44,12 +49,21 @@
 							<figure class="product-box_image">
 								<img src="<%= productos[i].foto %>" alt="<%= productos[i].nombre %>">
 							</figure>
+						</a>
 							<article class="product-box_data">
-								<h2><%= productos[i].nombre %></h2>
+								<a href="/products/detalle/<%= productos[i].id %>">
+									<h2><%= productos[i].nombre %></h2>
+								</a>
 								<p><%= productos[i].descripcion %></p>
 								<p>Comentarios: <%= productos[i].comentarios.length %></p>
+								<a href=""> 
+									<!-- este link tiene que llevar al perfil del usuario -->
+									<p>Vendedor: <strong><%= productos[i].usuario.nombre %></strong></p>
+								</a>
+								
 							</article>
-						</a>
+						
+
 					</section>
 				</div>
 			<% } %>

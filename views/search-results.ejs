@@ -23,7 +23,12 @@
 
 <body>
 	<!-- Header -->
-	<%- include('./partials/header') %>
+	<% if(locals.user != undefined){ %>
+		<%- include('./partials/headerLogueado') %>
+	<% } %>
+	<% if(locals.user == undefined){ %>
+		<%- include('./partials/header') %>
+	<% } %>
 	<!-- /Header -->
 	<!-- Novedades -->
 	<div class="container products-wrapper">
@@ -36,7 +41,7 @@
 			<% if (productos.length > 0) { %>
 				<% for (let i = 0; i < productos.length; i++) { %>
 					<article class="col-12 col-lg-8 product-detail-info productSearch">
-						<p>%= producto[i].usuario.nombre %></p> Esto de aca no funciona.
+						<h1>Vendedor del producto: <%= productos[i].usuario.nombre %></h1>
 						<h2><%= productos[i].nombre %></h2> 
 						<img src="<%= productos[i].foto %>" alt="<%= productos[i].nombre %>" class="product-detail-img">
 						<p class="product-detail-description"><%= productos[i].descripcion %> <br> 

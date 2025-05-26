@@ -21,27 +21,38 @@
 
 <body>
 	<!-- Header -->
-	<%- include('./partials/headerLogueado') %>
+	<% if(locals.user != undefined){ %>
+		<%- include('./partials/headerLogueado') %>
+	<% } %>
+	<% if(locals.user == undefined){ %>
+		<%- include('./partials/header') %>
+		<h1>IMPORTANTE: Debes estar loggeado para agregar poductos!</h1>
+		<h2>Si no lo estas, podes hacerlo aquí: <a href="/users/login">login</a></h2>
+
+	<% } %>
 	<!-- /Header -->
 
 	<!-- Novedades -->
+		<% if(locals.user != undefined){ %>
 			<div class="col-12">
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 				<section class="addProduct"> 
-					<form action="/users/profile" method="get" class="formAddProduct">
+					<form action="/products/nuevoProducto" method="POST" class="formAddProduct">
 						<label for="imagen">Imagen</label>
-						<input id="imagen" name="imagen" type="file" placeholder="Ingrese la imagen del producto">
+						<input id="imagen" name="imagen" type="text" placeholder="Pegá la URL de la imagen">
 						
-						<label for="nombreProduct">Nombre del Producto</label>
+						<label for="nombreProducto">Nombre del Producto</label>
 						<input id="nombreProducto" name="nombreProducto" type="text" placeholder="Ingrese el nombre del producto">
 						
-						<label for="descripcionProduct">Descripcion del Producto</label>
-						<input id="descripcionProduct" name="descripcionProduct" type="text" placeholder="Ingrese la descripcion del producto">
+						<label for="descripcionProducto">Descripcion del Producto</label>
+						<input id="descripcionProducto" name="descripcionProducto" type="text" placeholder="Ingrese la descripcion del producto">
 	
 						<button type="submit">Cargar producto</button>
 					</form>
 				</section>
+		<% } %>
+			
 
 	<!-- footer -->
 	<%- include("./partials/footer") %>

@@ -22,6 +22,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session( { secret: "Grupo 2", resave: false, saveUninitialized: true }));
 
+app.use(function(req, res, next) {
+  console.log(req.session.userLogueado)
+	if (req.session.userLogueado != undefined) {
+	  res.locals.user = req.session.userLogueado	
+  }
+  return next();
+});
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);

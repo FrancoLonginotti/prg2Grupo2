@@ -22,13 +22,19 @@
 <body>
 
 	<!-- Header -->
-	<%- include('./partials/header') %>
+	 <% if(locals.user != undefined){ %>
+		<%- include('./partials/headerLogueado') %>
+	<% } %>
+	<% if(locals.user == undefined){ %>
+		<%- include('./partials/header') %>
+	<% } %>
+	
 	<!-- /Header -->
 	
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= name %></h2> 
+			<h2 class="products-title"><%= producto.nombre %></h2> 
 			<p class="product-detail-description">
 				<a href="/products/productAdd">Editar</a>
 			</p>
@@ -36,25 +42,22 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= image %>" alt="<%= name %>" class="product-detail-img">
+					<h1>Vendedor del producto: <%= producto.usuario.nombre %></h1>
+					<img src="<%= producto.foto %>" alt="<%= producto.nombre %>" class="product-detail-img">
 					<p class="product-detail-description">
-						<%= description %>
+						<%= producto.descripcion %>
 					</p>					  
-					<p class="desc">
-						Descripción corta del producto. En la página principal solo se ven 2 líneas de estar descripción.Lorem ipsum dolor,
-						sit amet consectetur adipisicing elit. Tae ipsam amet eum, totam dolore libero illo unde? Consectetur dolorem neque
-						veritatis.
-					</p>
+					
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<% for (let i = 0; i < comments.length; i++) { %>
+						<% for (let i = 0; i < producto.comentarios.length; i++) { %>
 						<article>
-							<img src="/images/users/default-image.png" alt="">
+							<img src="<%= producto.comentarios[i].usuario.fotoPerfil %>" alt="">
 							<div class="data">
 							<p class="user">
-								<strong><a href="/users/profile"><%= comments[i].username %>:</a></strong>
-								<%= comments[i].text %>
+								<strong><a href="/users/profile"><%= producto.comentarios[i].usuario.nombre %>:</a></strong>
+								<%= producto.comentarios[i].texto %>
 							</p>
 							</div>
 						</article>
