@@ -16,15 +16,15 @@ module.exports = function(sequelize, dataTypes){
         id_usuario:{
             type: dataTypes.STRING,
         },
-        created_at:{
-            type: dataTypes.DATE,
-        },
-        updated_at: {
-            type: dataTypes.DATE,
-        },
-        delated_at: {
-            type: dataTypes.DATE,
-        }
+        // created_at:{
+        //     type: dataTypes.DATE,
+        // },
+        // updated_at: {
+        //     type: dataTypes.DATE,
+        // },
+        // delated_at: {
+        //     type: dataTypes.DATE,
+        // }
     }
 
     let config = {

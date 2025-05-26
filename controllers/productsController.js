@@ -3,18 +3,23 @@ const db = require('../database/data');
 
 const productsController = {
     index: function(req, res){
-        let productos = data.productos;
-        let id = req.params.detalle;
+        let id = req.params.id;
+        db.Producto.findByPk(id)
+        .then(function(producto){
+            res.render("product", {producto: producto})
+        })
         
-        if (productos[id]){
-            let product = productos[id];
-            return res.render('product', {
-                name: product.name,
-                description: product.description,
-                image: product.image,
-                comments: product.comments
-            });
-        }
+        // let id = req.params.detalle;
+        
+        // if (productos[id]){
+        //     let product = productos[id];
+        //     return res.render('product', {
+        //         name: product.name,
+        //         description: product.description,
+        //         image: product.image,
+        //         comments: product.comments
+        //     });
+        // }
     },
     productAdd: function(req, res){
         let productos = data.productos;
