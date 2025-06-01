@@ -21,7 +21,7 @@ module.exports = function (sequelize, dataTypes){
             type: dataTypes.DATE,
         },
         dni:{
-            type: dataTypes.DATE,
+            type: dataTypes.INTEGER,
         },
         fotoPerfil:{
             type: dataTypes.STRING,
@@ -39,7 +39,7 @@ module.exports = function (sequelize, dataTypes){
 
     let config = {
         tableName : "usuarios",
-        timestamps: false,
+        timestamps: true,
         underscored: true,
     };
 

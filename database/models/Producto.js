@@ -19,13 +19,21 @@ module.exports = function (sequelize, dataTypes){
         },
         id_usuario:{
             type: dataTypes.INTEGER
+        },
+        created_at:{
+            type: dataTypes.DATE,
+        },
+        updated_at: {
+            type: dataTypes.DATE,
+        },
+        deleted_at: {
+            type: dataTypes.DATE,
         }
-        //ACA SAQUE LOS QUE FALTAN PORQ NO FUNCIONABAN
     }
 
     let config = {
         tableName : "productos",
-        timestamps: false, //no se si es true
+        timestamps: true, //no se si es true
         underscored: true,
     };
 

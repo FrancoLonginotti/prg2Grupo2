@@ -9,10 +9,10 @@ CREATE TABLE usuarios (
     contrasenia VARCHAR(255) NOT NULL,
     fecha DATE NOT NULL,
     dni INT NOT NULL UNIQUE,
-    fotoPerfil VARCHAR(255),
-    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deletedAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP
+    foto_perfil VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    deleted_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP
 );
 
 CREATE TABLE productos (
@@ -22,9 +22,9 @@ CREATE TABLE productos (
     descripcion TEXT,
     id_usuario INT UNSIGNED NOT NULL,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
-    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deletedAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    deleted_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP
 );
 
 CREATE TABLE comentarios (
@@ -34,24 +34,24 @@ CREATE TABLE comentarios (
     FOREIGN KEY (id_producto) REFERENCES productos(id),
     id_usuario INT UNSIGNED NOT NULL,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
-    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deletedAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    deleted_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP
 );
 
-INSERT INTO usuarios (email, nombre, contrasenia, fecha, dni, fotoPerfil)
+INSERT INTO usuarios (email, nombre, contrasenia, fecha, dni, foto_perfil)
 VALUES('josefina@gmail.com', 'josefina', '1234jOSE', 20050106, 46443234, '/images/user/default-image.png');
 
-INSERT INTO usuarios (email, nombre, contrasenia, fecha, dni, fotoPerfil)
+INSERT INTO usuarios (email, nombre, contrasenia, fecha, dni, foto_perfil)
 VALUES('franco@gmail.com', 'franco', '1234franco', 20040819, 45443234, '/images/user/default-image.png');
 
-INSERT INTO usuarios (email, nombre, contrasenia, fecha, dni, fotoPerfil)
+INSERT INTO usuarios (email, nombre, contrasenia, fecha, dni, foto_perfil)
 VALUES('marcos@gmail.com', 'marcos', '1234marcos', 20050715, 46443235, '/images/user/default-image.png');
 
-INSERT INTO usuarios (email, nombre, contrasenia, fecha, dni, fotoPerfil)
+INSERT INTO usuarios (email, nombre, contrasenia, fecha, dni, foto_perfil)
 VALUES('maria@gmail.com', 'maria', 'mariaa++', 19900710, 22443235, '/images/user/default-image.png');
 
-INSERT INTO usuarios (email, nombre, contrasenia, fecha, dni, fotoPerfil)
+INSERT INTO usuarios (email, nombre, contrasenia, fecha, dni, foto_perfil)
 VALUES('ignacio@gmail.com', 'nacho', 'nacho++', 20001201, 38443235, '/images/user/default-image.png');
 
 

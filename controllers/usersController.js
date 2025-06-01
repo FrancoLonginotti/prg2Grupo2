@@ -90,11 +90,21 @@ const usersController = {
         db.Usuario.create({
             email: req.body.email,
             contrasenia: passEncriptada,
+            dni: req.body.dni,
             fecha: req.body.fechaNacimiento, 
             fotoPerfil: req.body.fotoPerfil,
             nombre: req.body.usuario
-        });
-           return res.redirect('/users/profile');  
+        })
+        .then(function(user){
+             req.session.userLogueado = {
+                        id: user.id,
+                        nombre: user.nombre,
+                        email: user.email,
+                        fotoPerfil: user.fotoPerfil
+                    };
+            return res.redirect('/users/profile');
+        })
+      
     },
     
     logout: function(req, res){
