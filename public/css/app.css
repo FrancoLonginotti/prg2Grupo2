@@ -335,11 +335,16 @@ a{
   width: 20vw;
   display: block;
   margin: none;
+  margin: 3% 0 3% 0;
 }
 
 .product-detail-info {
+  display: flex;
   border-right: 1px solid var(--light-gray);
   padding: 15px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
   /* height: 100%; */
 }
 
