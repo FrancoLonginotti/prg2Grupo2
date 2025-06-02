@@ -4,6 +4,9 @@ const db = require('../database/models');
 
 const usersController = {
     login: function(req, res){
+        if (req.session.userLogueado) {
+            return res.redirect('/users/profile'); 
+        }
         return res.render('login');
     },
 
@@ -25,9 +28,6 @@ const usersController = {
                     
                     if(req.body.recordarme != undefined){
                         res.cookie('usuario', user,{ maxAge: 1000 * 60 * 5 });
-                        //req.session.user = req.session.userLogueado
-                        
-                        // que hago para que me recuerde? porque sin recordar cierro y abro y funciona igual
                     };
                     res.redirect('/users/profile');
                 }else{
@@ -66,7 +66,37 @@ const usersController = {
         })
     },
 
+    profilePorId: function(req, res){
+        let userId = req.params.id;
+ 
+ 
+        db.Usuario.findByPk(userId, {
+            include: [
+                {
+                    association: "productos",
+                    include: [
+                        {
+                            association: "comentarios" //comentarios de cada producto
+                        }
+                    ]
+                },
+                {
+                    association: "comentarios" //comentarios del usuario
+                }
+            ]
+        })
+        .then(function(usuario){
+            if(!usuario) {
+                return res.send("Usuario no encontrado");
+            }
+            res.render("profile", { usuario: usuario });
+        })
+    }, 
+
     register: function(req, res){
+        if (req.session.userLogueado) {
+            return res.redirect('/users/profile'); 
+        }
         return res.render('register');
     },
 

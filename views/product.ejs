@@ -42,7 +42,7 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<h1>Vendedor del producto: <%= producto.usuario.nombre %></h1>
+					<h1>Vendedor del producto: <a href="/users/profile/<%= producto.usuario.id %>"><%= producto.usuario.nombre %></a></h1> 
 					<img src="<%= producto.foto %>" alt="<%= producto.nombre %>" class="product-detail-img">
 					<p class="product-detail-description">
 						<%= producto.descripcion %>
@@ -56,7 +56,7 @@
 							<img src="<%= producto.comentarios[i].usuario.fotoPerfil %>" alt="">
 							<div class="data">
 							<p class="user">
-								<strong><a href="/users/profile"><%= producto.comentarios[i].usuario.nombre %>:</a></strong>
+								<strong><a href="/users/profile/<%= producto.comentarios[i].usuario.id %>"><%= producto.comentarios[i].usuario.nombre %>:</a></strong>
 								<%= producto.comentarios[i].texto %>
 							</p>
 							</div>

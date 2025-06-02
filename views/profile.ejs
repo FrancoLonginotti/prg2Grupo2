@@ -18,37 +18,43 @@
 </head>
 <body>
 	<!-- Header -->
-	<%- include('./partials/headerLogueado') %>
+	<% if(locals.user != undefined){ %>
+		<%- include('./partials/headerLogueado') %>
+	<% } %>
+	<% if(locals.user == undefined){ %>
+		<%- include('./partials/header') %>
+	<% } %>
 	<!-- /Header -->
-
+ 
+ 
 	<!-- Datos del usuario -->
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
 				<% if(locals.user != undefined){ %>
-					<img src="<%= locals.user.fotoPerfil %>" alt="foto de perfil" class="foto-perfil">
+					<img src="<%= usuario.fotoPerfil %>" alt="foto de perfil" class="foto-perfil">
 				<% } %>
+ 
+ 
 				</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title">
-						<% if(locals.user != undefined){ %>
-							<%= locals.user.nombre %>
-						<% } %>
+		   
+							<%= usuario.nombre %>
+				   
 						<a href="profile-edit.html">
 							<i class="fas fa-cog"></i>
 						</a>
 					</h1>
-					
-				
+				   
+			   
 					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
-					
+				   
 				</div>
 				<div>
-					<ul class="">
-					<% if(locals.user != undefined){ %>
-						<p><%= locals.user.email %></p>
-					<% } %>
+					<ul class="">  
+						<p><%= usuario.email %></p>
 						<li><%= usuario.productos.length %> productos</li>
 						<li>200 seguidores</li>
 						<li><%= usuario.comentarios.length %> comentarios</li>
@@ -58,7 +64,8 @@
 		</div>
 	</section>
 	<!-- /Datos del usuario -->
-
+ 
+ 
 	<!-- Mis productos -->
 	<div class="container products-wrapper">
 		<div class="row">
@@ -71,19 +78,19 @@
 					<section class="product-box">
 						<a href="/products/detalle/<%= usuario.productos[i].id %>">
 							<figure class="product-box_image">
-								<inomg src="<%= usuario.productos[i].foto %>" alt="<%= usuario.productos[i].nombre %>">
+								<img src="<%= usuario.productos[i].foto %>" alt="<%= usuario.productos[i].nombre %>">
 							</figure>
 						</a>
 							<article class="product-box_data">
 								<a href="/products/detalle/<%= usuario.productos[i].id %>">
 									<h2><%= usuario.productos[i].nombre %></h2>
 								</a>
-								
+							   
 								<p><%= usuario.productos[i].descripcion %></p>
 								<p>Comentarios: <%= usuario.productos[i].comentarios.length %></p>
 								<p>Vendedor: <strong><%= usuario.nombre %></strong></p>
 							</article>
-						
+					   
 					</section>
 				</div>
 			<% } %>

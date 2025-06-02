@@ -34,14 +34,14 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Resultados de búsqueda para <%= result %></h2>
+				<h2 class="products-title">Resultados de búsqueda para "<%= result %>"</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
 			<!--<h2 class="col-12">  -->
 			<% if (productos.length > 0) { %>
 				<% for (let i = 0; i < productos.length; i++) { %>
 					<article class="col-12 col-lg-8 product-detail-info productSearch">
-						<h1>Vendedor del producto: <%= productos[i].usuario.nombre %></h1>
+						<h1>Vendedor del producto: <a href="/users/profile/<%= productos[i].usuario.id %>"><%= productos[i].usuario.nombre %></a></h1>
 						<h2><%= productos[i].nombre %></h2> 
 						<img src="<%= productos[i].foto %>" alt="<%= productos[i].nombre %>" class="product-detail-img">
 						<p class="product-detail-description"><%= productos[i].descripcion %> <br> 

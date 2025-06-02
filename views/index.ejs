@@ -56,13 +56,11 @@
 								</a>
 								<p><%= productos[i].descripcion %></p>
 								<p>Comentarios: <%= productos[i].comentarios.length %></p>
-								<a href=""> 
-									<!-- este link tiene que llevar al perfil del usuario -->
+								<a href="/users/profile/<%= productos[i].usuario.id %>"> 
 									<p>Vendedor: <strong><%= productos[i].usuario.nombre %></strong></p>
 								</a>
 								
 							</article>
-						
 
 					</section>
 				</div>
